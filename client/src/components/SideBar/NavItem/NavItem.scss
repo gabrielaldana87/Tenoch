@@ -1,0 +1,16 @@
+@import "../../../styles/index";
+
+.MuiTypography-root.MuiListItemText-primary.MuiTypography-body1{
+  letter-spacing: 1px;
+  font-size: .75em;
+  color: #72777a;
+}
+
+.icon-holder {
+  color: #72777a;
+  transition: all 0.3s ease;
+}
+
+.MuiSvgIcon-root {
+  fill: #72777a;
+}

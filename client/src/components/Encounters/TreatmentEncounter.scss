@@ -1,0 +1,32 @@
+.resource-box {
+
+  &.Lab_Location {
+
+    .inner-encounter {
+      background-color: rgba(0, 0, 0, 0);
+
+    }
+
+  }
+
+  .inner-encounter {
+    background-color: rgba(31, 40, 44, 0.50);
+    border-radius: 5px;
+    padding: 2px 2px 2px 3px;
+    margin: 2px 4px 3px -1px;
+
+    &.singular {
+      margin-left: -14px;
+      padding-left: 14px;
+    }
+  }
+
+}
+
+.recorded-timestamp {
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight:400;
+  display: block;
+}

@@ -1,0 +1,29 @@
+.mainColumn {
+  box-sizing: border-box;
+}
+
+.col-md-15 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.CardView {
+  box-sizing: border-box;
+  padding: 24px;
+  margin-bottom: 20px;
+  background-color: #2a363b;
+  width: 100%;
+  border-radius: 6px;
+  position: relative;
+  transition: all 1s, ease-out;
+}
+
+.cardHeader {
+  color: white;
+}
+
+.text-prompt {
+  color: white;
+}

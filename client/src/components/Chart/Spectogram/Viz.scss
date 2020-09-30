@@ -1,0 +1,27 @@
+body {
+  position: relative;
+}
+
+canvas, div.controller {
+  position: absolute;
+}
+
+.avg_los, .label_avg_los {
+  position: absolute;
+  top: 500px;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis path {
+  display: none;
+}

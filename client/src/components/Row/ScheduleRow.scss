@@ -1,0 +1,57 @@
+.inner-image.schedule, .inner-image {
+  margin: 5px 5px 0px 5px;
+
+  .identifying-container {
+    margin: 1px 0px 5px 1px;
+
+    .fullname {
+      margin: 0px 0px 10px 0.3rem;
+    }
+  }
+
+  .resource-box {
+    background-color: rgba(31, 40, 44, .25);
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
+    padding: 2px 2px 2px 7px;
+
+    //&.Lab_Location {
+    //  background-color: rgba(31, 40, 44, .5);
+    //}
+
+    .resource-tag {
+      float: right;
+      margin: 15px 10px 15px 0px;
+      width: 1rem;
+      border-radius: 5px;
+      padding: 1px 1px 1px 7px;
+      font-size: 15px;
+      font-weight: 700;
+      background: grey
+    }
+
+  }
+
+  .record-number {
+    float: right;
+    margin-right: 5px;
+  }
+
+  .text-identifier.schedule {
+    padding: 2px 1px 2px 14px;
+    margin: 0px 0px 0px 0px;
+
+    span.inner-span {
+      width: 33%;
+    }
+
+    strong {
+    }
+
+  }
+
+}
+
+
+
+

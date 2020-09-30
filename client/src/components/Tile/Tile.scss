@@ -1,0 +1,91 @@
+
+.main-content {
+  width: 1402px;
+}
+
+@media ( max-width: 1280px ) {
+  .main-content {
+    width: 1135px;
+  }
+}
+
+div.container-tile {
+  background: #2a363b;
+  display: inline-flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 10px 15px 10px 15px;
+  border-radius: 6px;
+  border-left: 1px solid #2a363b;
+  border-right: 1px solid #2a363b;
+  border-bottom: 1px solid #2a363b;
+  font-size: 14px;
+  transition: box-shadow 0.15s, background 0.3s;
+}
+
+div.containment-panel {
+  font-size: 11px;
+  background: rgb(31, 40, 44);
+  color: white;
+  margin: 0px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 6px;
+}
+
+div.accordion-info {
+  color: white;
+  padding: 5px 5px 5px 20px;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+  margin: 0px 0px 0px 0px;
+}
+
+h5.module-header.narrow {
+  margin: 12px 6px 12px 6px;
+}
+
+.light-label {
+  display: inline-block;
+  color: white;
+}
+
+.light-label:first-child {
+  margin-bottom: 5px;
+}
+
+.row-container.floating-layout {
+  min-height: 90px;
+  float: left;
+  width: 7rem;
+  margin: 7px 7px 7px 7px;
+  padding: 7px 5px 5px 5px;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.row-container .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-weight: 600;
+
+}
+
+.background-group {
+  background-color: rgba(31, 40, 44, 0.5);
+  padding: 3px 3px 3px 3px;
+  border-radius: 6px;
+  margin: 3px 3px 3px 3px;
+  display: table;
+}
+
+.grouping-title {
+  font-weight: 600;
+  letter-spacing: 5px;
+  padding: 10px 10px 10px 10px;
+}

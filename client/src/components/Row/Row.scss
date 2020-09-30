@@ -1,0 +1,54 @@
+@import "../../styles/index";
+
+
+//these styles have been updated from color block format
+
+.card-title-html {
+
+  .row-container {
+
+    position:relative;
+    cursor: pointer;
+    min-height: 99px;
+    margin-bottom: 10px;
+    background-color: rgb(31, 40, 44);
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #29373B!important;
+    border-radius: $list-radius !important;
+
+    p.text-identifier {
+      //margin: 5px 5px 5px 5px;
+      //padding: 5px 5px 5px 5px;
+      color: white !important;
+
+      span  {
+        display: inline-block;
+        //width: 33%;
+      }
+
+      .inner-span.oversize {
+        float: right;
+        text-transform: uppercase;
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      strong.oversize {
+        display: inline-block;
+        width: 67%;
+      }
+
+      strong.location {
+        display: inline-block;
+        width: 100%
+      }
+
+    }
+  }
+
+}
+
+
+
+
