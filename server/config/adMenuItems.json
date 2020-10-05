@@ -1,0 +1,38 @@
+{
+  "infusion": {
+    "path": "/dhk4",
+    "data": [{
+      "name":"Boards",
+      "icon": "ti-desktop",
+      "children": [{
+        "name":"DHK Infusion",
+        "url":"/dhk4"
+      },{
+        "name": "Starr3 Infusion",
+        "url":"/starr3"
+      }]
+    },{
+      "name":"Locations",
+      "icon":"ti-location-arrow",
+      "children": [{
+        "name": "DHK Infusion",
+        "url": "/dhk4_location_lookup"
+      },{
+        "name":"Starr3 Infusion",
+        "url":"/starr3_location_lookup"
+      }]
+    }]
+  },
+  "cohen" : {
+    "path": "/cohen",
+    "data": [{
+      "name":"Boards",
+      "icon":"ti-desktop",
+      "url": "/cohen"
+    }]
+  },
+  "none" : {
+    "path": "/",
+    "data":[]
+  }
+}
