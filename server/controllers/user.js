@@ -1,5 +1,6 @@
 const passport = require('../config/passport');
 const workflow = require('../config/adMenuItems.json');
+const datadbc = require('../lib/jupiterdevmodel');
 const _ = require('underscore');
 
 exports.create = (req, res, next) => {
@@ -37,6 +38,8 @@ exports.create = (req, res, next) => {
             else return workflow.none;
           },
           adGroup = findADGroup()
+        ;
+        datadbc.executeUserInsert(user)
         ;
         res.json({ cn, title, displayName, name, mail, adGroup } )
       }
