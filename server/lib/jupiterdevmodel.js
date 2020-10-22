@@ -6,6 +6,8 @@ const table = '[GraphiteDevTeam].[dbo].[TenochUserLog]';
 const { customAlphabet } = require('nanoid');
 const nanoid = customAlphabet('1234567890abcdef', 10);
 
+const env = process.env.NODE_ENV || 'development';
+
 const log4js = require('log4js');
 const logger = log4js.getLogger();
 
@@ -14,18 +16,19 @@ exports.executeUserInsert = user => {
   connection = new Connection(sql_config);
   connection.connect( err => {
     if (err) {
-      console.log(err);
+      logger.error('connection to jupiteruatdb failed');
     }
    executeStatement(user);
   });
   const executeStatement = user => {
     const { cn, title, displayName, name, mail } = user;
     let request = new Request(`INSERT INTO ${ table } (transactionId, cn, title,` +
-    ` displayName, name, mail, dateAccessed, isAdmin) VALUES (@transactionId, @cn, @title, @displayName, @name, @mail,` +
-    ` @dateAccessed, @isAdmin);`, err => {
+    ` displayName, name, mail, dateAccessed, isAdmin, environment) VALUES (@transactionId, @cn, @title, @displayName, @name, @mail,` +
+    ` @dateAccessed, @isAdmin, @environment );`, err => {
       if (err) {
         console.log(err);
       }
+      connection.close();
     });
     request.addParameter('transactionId', TYPES.NVarChar, nanoid() );
     request.addParameter('cn', TYPES.NVarChar, cn );
@@ -34,7 +37,8 @@ exports.executeUserInsert = user => {
     request.addParameter('name', TYPES.NVarChar, name );
     request.addParameter('mail', TYPES.NVarChar, mail );
     request.addParameter('dateAccessed', TYPES.DateTime, new Date() );
-    request.addParameter('isAdmin', TYPES.Bit, isAdmin(name));
+    request.addParameter('isAdmin', TYPES.Bit, isAdmin(name) );
+    request.addParameter('environment', TYPES.NVarChar, env );
 
     connection.execSql(request);
 
