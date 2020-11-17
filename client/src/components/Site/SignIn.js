@@ -25,7 +25,6 @@ class SignIn extends Component {
     const { username, password } = this.state;
     if (username && password) {
       dispatch(login(username, password));
-      //this.props.login(username, password);
     }
   }
   ;
@@ -38,7 +37,7 @@ class SignIn extends Component {
           <div className="peers ai-s fxw-nw h-100vh">
             <div
               className="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv"
-              style={{ backgroundImage: 'url(./static/wcmc_2_1.jpg)' }}
+              style={{ backgroundImage: 'url(./static/wcmc_2_1.png)' }}
             >
               <div className="pos-a centerXY">
                 <div
