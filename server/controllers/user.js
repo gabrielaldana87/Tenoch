@@ -17,7 +17,7 @@ exports.create = (req, res, next) => {
       }
       if (req.user) {
         const
-          { cn, title, displayName, name, mail, memberOf } = user,
+          { cn, title, displayName, name, mail, memberOf, sAMAccountType } = user,
           findADGroup = () => {
             if (memberOf.some(o => o.includes('NYP_Jupiter_Internal_GRP'))) {
               // if (memberOf.some(o => o.includes('Security-WC-GRP'))) {
@@ -41,7 +41,7 @@ exports.create = (req, res, next) => {
         ;
         datadbc.executeUserInsert(user)
         ;
-        res.json({ cn, title, displayName, name, mail, adGroup } )
+        res.json({ cn, title, displayName, name, mail, adGroup, sAMAccountType } )
       }
     })
   })(req, res, next);
