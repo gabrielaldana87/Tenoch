@@ -23,61 +23,61 @@ class Search extends Component {
       searchApiUrl: props.searchApiUrl,
       limit: props.limit,
       selectedOption: this.props.defaultValue,
-      fetchPatients : _.debounce(this.fetchPatients.bind(this), 500)
+      fetchPatients : _.debounce(this.fetchPatients.bind(this), 500),
     }
   }
   onChange = vals => {
     if ( !vals || vals.length < 1) {
-
       selectAll('.row-container')
         .classed('selected', false)
         .style('display', null)
       ;
     } if (vals) {
+      this.setState({ queue : vals });
       selectAll('.row-container')
         .classed('selected', false)
       ;
       vals.map(v => {
-        select(`#C${ v.value }`)
+        select(`#C${ v.mrn }`)
           .style('display', null)
           .classed('selected', true)
         ;
         selectAll(`.row-container:not(.selected)`)
           .style('display', 'none')
         ;
-      })
+      });
     }
   }
   ;
   mapOptionsToValues = options => {
     const
-      mrnOptions = []
+      mrnOptions = [],
+      { value } = this.props.filter
     ;
      options.lists.map(option => {
       option.cards.map(card => {
         card.rows.map( row => {
           mrnOptions.push({
-            value: row.mrn,
+            mrn: row.mrn,
+            value: row[value],
             lastKnownLocation: row.lastknownlocationname,
             label: `${ row.firstname } ${ row.lastname }` }
           )
         })
       })
     });
-    this.onChange(mrnOptions);
+    // this.onChange(mrnOptions);
     return mrnOptions;
   }
   ;
   fetchPatients = (inputValue, callback) => {
     const { dispatch, path } = this.props;
-
     dispatch(fetchBoard(path))
       .then( res => {
-        reformat(res)
-        if (this.props.mapOptionsToValues) callback(this.props.mapOptionsToValues(res));
+       if (this.props.mapOptionsToValues) callback(this.props.mapOptionsToValues(res));
         else {
           callback(this.mapOptionsToValues(res)
-            .filter(o =>  o.value.toLowerCase().includes(inputValue.toLowerCase()))
+            .filter(o =>  o.value.replace(/\s/g, '').toLowerCase().includes(inputValue.replace(/\s/g, '').toLowerCase()))
           );
         }
       })
@@ -160,4 +160,10 @@ const reformat = res => {
   }
 };
 
-export default connect()(Search);
+const mapStateToProps = state => {
+  return {
+    filter: state.filter.data
+  }
+};
+
+export default connect(mapStateToProps)(Search);
