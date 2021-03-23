@@ -20,7 +20,8 @@ const logger = log4js.getLogger();
 app.use(express.json());
 // IN DEVELOPMENT REMOVE THE FOLLOWING LINES
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://nypnodedev.sis.nyp.org:4080"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "https://nypnodedev.sis.nyp.org:4080"); // update to match the domain
+  // you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
