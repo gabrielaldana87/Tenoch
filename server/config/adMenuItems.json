@@ -21,6 +21,13 @@
         "name":"Starr3 Infusion",
         "url":"/starr3_location_lookup"
       }]
+    },{
+      "name": "Reports",
+      "icon": "ti-bar-chart",
+      "children": [{
+        "name":"Starr Infusion",
+        "url":"/tableau"
+      }]
     }]
   },
   "cohen" : {
