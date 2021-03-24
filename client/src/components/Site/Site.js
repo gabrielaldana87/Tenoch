@@ -9,6 +9,7 @@ import Welcome from './Welcome';
 import Controller from '../Chart/Spectogram/Controller';
 import ControllerLineGraph from '../Chart/LineChart/ControllerLineGraph';
 import Location from '../Location/Location';
+import IFrame from '../IFrame/IFrame';
 import { history } from '../../helpers/history';
 
 class Site extends Component {
@@ -26,7 +27,8 @@ class Site extends Component {
       st3 = '/starr3',
       dhk_loc = '/dhk4_location_lookup',
       st3_loc = '/starr3_location_lookup',
-      cohen = '/cohen'
+      cohen = '/cohen',
+      tableau = '/tableau'
     ;
     return (
       <Switch>
@@ -40,6 +42,7 @@ class Site extends Component {
           <Route path={ dhk_loc } children={ <Home><Location path={ dhk_loc } /></Home> } />
           <Route path={ st3_loc } children={ <Home><Location path={ st3_loc } /></Home> } />
           <Route path={ cohen } children={ <Home><Board path={ cohen } /></Home> } />
+          <Route path={ tableau } children={ <Home><IFrame/></Home>} />
           <Route path='/covid' children={ <>
             {/*<Controller col='avg_loo'/>*/}
             {/*<Controller col='avg_los'/>*/}
