@@ -5,5 +5,7 @@
     "value": "lastname", "label":"last name"
   },{
     "value": "lastknownlocationname", "label": "last known location name"
+  },{
+    "value": "lastmovementdate", "label": "last timestamp recorded"
   }]
 }
